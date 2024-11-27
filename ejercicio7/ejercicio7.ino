@@ -51,9 +51,10 @@ void loop() {
       case 'S':
         //Serial.println(textoSerial);
         //Serial.println(textoSerial.length());
-        if(textoSerial.charAt(4)=='t' || textoSerial.charAt(4)=='T'){
+        //if(textoSerial.charAt(4)=='t' || textoSerial.charAt(4)=='T'){
+          if(textoSerial.equalsIgnoreCase("start")){ //Enviar los mensajes en consola con < No Line Ending >
           activo=1;
-        }else if(textoSerial.charAt(3)=='p' || textoSerial.charAt(3)=='P'){
+        }else if(textoSerial.equalsIgnoreCase("stop")){
           activo=0;
         }else{
           Serial.println("Opcion no definida");
