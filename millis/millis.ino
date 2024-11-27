@@ -1,4 +1,22 @@
-int ctr1=0;
+int contador=0;
+unsigned long temporizador=0;
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  temporizador=millis();
+  
+}
+void loop() {
+
+  if(millis()>=temporizador+1000){
+    temporizador=millis();
+    contador++;
+    Serial.println(contador);
+  }
+}
+
+
+/*int ctr1=0;
 int ctr2=0;
 unsigned long temporizador=0;
 void setup() {
@@ -33,14 +51,9 @@ void mostrarMensaje(){
   Serial.print(" C2: ");
   Serial.print(ctr2);
   Serial.println();
-}
+}*/
 /*
  millis
-a. El contador ctr1 se incrementará 10 veces por segundo
-b. El contador ctr2 se incrementará 1 vez cada 2 segundos.
-c. Cuando se incremente ctr2 se descontará el valor de dicho contador de
-ctr1.
-d. Cada vez que uno de los dos contadores se incremente se imprimirá con 
-el formato C1: {valor del contador 1} C2: {valor del contador 2}.
-e. Usar millis()
+a. Incrementar un contador e imprimirlo por el monitor serie cada segundo.
+b. Usar millis()
 */
